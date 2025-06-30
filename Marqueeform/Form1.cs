@@ -17,7 +17,7 @@ namespace Marqueeform
             OtherStuff randomstuff = new OtherStuff();
             Thread processingThread = new Thread(new ThreadStart(randomstuff.StartProcess));
             processingThread.Start();
-            //processingThread.Join();
+            processingThread.Join();
         }
     }
     public class MarqueeProgressForm : Form
@@ -52,52 +52,13 @@ namespace Marqueeform
             backgroundWorker.DoWork += (obj, e) => workerTasks(progressForm);
             backgroundWorker.RunWorkerCompleted += worker_RunWorkerCompleted;
             backgroundWorker.RunWorkerAsync();
-
-
-
-
-            //await
-            //    Task.Run(() =>
-            //    { 
-            //        try
-            //        {
-            //            // Simulate long work (replace with real logic)
-            //            for(int i = 0; i < 10; i++)
-            //            {
-            //                var client = new RestClient("https://fake-json-api.mock.beeceptor.com");
-            //                var request = new RestRequest("users");
-            //                var response = client.ExecuteGet(request);
-            //                var data = JsonSerializer.Deserialize<JsonNode>(response.Content!)!;
-            //            }                    
-            //        }
-            //        catch(Exception)
-            //        {
-            //            MessageBox.Show("Exception thrown");
-            //        }
-            //        finally
-            //        {
-            //            // Safely close the progress form on the UI thread
-            //            if (progressForm.InvokeRequired)
-            //            {
-            //                progressForm.Invoke(new System.Action(() => progressForm.Close()));
-            //            }
-            //            else
-            //            {
-            //                progressForm.Close();
-            //            }
-
-            //            // Optional: Notify user after closing
-            //            MessageBox.Show("Process Complete!");
-
-            //        }
-            //    });
         }
 
         public void workerTasks(MarqueeProgressForm progressForm)
         {
             try
             {
-                // Simulate long work (replace with real logic)
+                // Long running stuff
                 for (int i = 0; i < 10; i++)
                 {
                     var client = new RestClient("https://fake-json-api.mock.beeceptor.com");
@@ -112,7 +73,6 @@ namespace Marqueeform
             }
             finally
             {
-                // Safely close the progress form on the UI thread
                 if (progressForm.InvokeRequired)
                 {
                     progressForm.Invoke(new System.Action(() => progressForm.Close()));
@@ -122,7 +82,6 @@ namespace Marqueeform
                     progressForm.Close();
                 }
 
-                // Optional: Notify user after closing
                 MessageBox.Show("Process Complete! from worker");
 
             }
@@ -130,7 +89,6 @@ namespace Marqueeform
 
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            // will output "all done" to the console
             MessageBox.Show("Process Complete! from end task");
         }
     }
