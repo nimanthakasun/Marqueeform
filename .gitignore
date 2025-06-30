@@ -6,6 +6,20 @@
 [Oo]utput/
 [Ll]og/
 [Ll]ogs/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Aa][Rr][Mm]64[Ee][Cc]/
+bld/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# Build results on 'Bin' directories
+**/[Bb]in/*
 
 # User-specific files
 *.user
@@ -33,6 +47,7 @@
 *.vsixmanifest
 *.vscode/
 .vscode/
+.vs/
 
 # NuGet
 *.nupkg
