@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uTKNTMldoYWSHq1plAPXCWUEOW50zSjL51Efm/0Fur1QIbRuYsfH/ux7yVGrKCk4pITqRsmQQ/AvdDQJqz/XzQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kbamunuarachchi\\source\\repos\\Marqueeform\\Marqueeform\\Marqueeform.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kbamunuarachchi\\.nuget\\packages\\restsharp\\112.1.0\\restsharp.112.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
